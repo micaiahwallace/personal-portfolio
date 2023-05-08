@@ -1,6 +1,6 @@
 <svelte:head>
-	<title>Home</title>
-	<meta name="description" content="Micaiah Wallace Portfolio" />
+	<title>Micaiah Wallace</title>
+	<meta name="description" content="Micaiah Wallace's software projects" />
 </svelte:head>
 
 <section>
