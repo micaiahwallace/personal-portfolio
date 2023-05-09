@@ -16,7 +16,8 @@
 		{
 			title: 'Colander',
 			summary: 'resource planning calendar.',
-			description: 'Login by using your email address to receive a magic link.',
+			description:
+				'Login by using your email address to receive a magic code. Create and manage real-time events in a drag-n-drop resource calendar view. Make sure to open on a second device to watch the updates real-time!',
 			link: 'https://dev.colanderapp.io/',
 			linkAlt: 'Colander App',
 			github: 'https://github.com/colander-app/',
@@ -31,9 +32,9 @@
 	{#each projects as project}
 		<li>
 			<div>
-				<a class="project-title" href={project.link}
-					>{project.title} <span class="muted">{project.summary}</span></a
-				>
+				<div class="project-title">
+					<a href={project.link}>{project.title} <span class="muted">{project.summary}</span></a>
+				</div>
 				<div class="project-link">
 					<a class="link" href={project.link} target="_blank">
 						<img src={external} alt={project.linkAlt} />
@@ -56,7 +57,7 @@
 		margin-bottom: 3rem;
 	}
 
-	.project-title {
+	.project-title > a {
 		font-size: 2rem;
 		text-decoration: none;
 		color: var(--color-text);
@@ -101,7 +102,7 @@
 		height: 35px;
 	}
 
-	a {
+	a.link {
 		padding: 0 0.5rem;
 	}
 </style>
