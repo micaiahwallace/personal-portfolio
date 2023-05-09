@@ -9,25 +9,25 @@
 	<nav>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Projects</a>
+				<a class="link" href="/">About</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/resume' ? 'page' : undefined}>
-				<a href="/resume">Résumé</a>
+				<a class="link" href="/resume">Résumé</a>
 			</li>
 		</ul>
 		<ul>
 			<li>
-				<a href="https://github.com/micaiahwallace">
+				<a class="link" href="https://github.com/micaiahwallace/" target="_blank">
 					<img src={github} alt="GitHub" />
 				</a>
 			</li>
 			<li>
-				<a href="https://www.linkedin.com/in/micaiahwallace/">
+				<a class="link" href="https://www.linkedin.com/in/micaiahwallace/" target="_blank">
 					<img src={linkedin} alt="LinkedIn" />
 				</a>
 			</li>
 			<li>
-				<a href="https://micaiah-wallace.medium.com/">
+				<a class="link" href="https://micaiah-wallace.medium.com/" target="_blank">
 					<img src={medium} alt="Medium" />
 				</a>
 			</li>
@@ -70,48 +70,14 @@
 		height: 100%;
 	}
 
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
-	}
-
 	a {
 		display: flex;
 		height: 100%;
 		align-items: center;
 		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 700;
-		font-size: 0.8rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		text-decoration: none;
-		transition: color 0.2s linear;
 	}
 
-	a::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 4px;
-		border-radius: 4px;
-		background-color: #18272f;
-		bottom: 0;
-		left: 0;
-		transform-origin: right;
-		transform: scaleX(0);
-		transition: transform 0.2s ease-in-out;
-	}
-
-	a:hover::before {
-		transform-origin: left;
+	li[aria-current='page'] a::before {
 		transform: scaleX(1);
 	}
 </style>

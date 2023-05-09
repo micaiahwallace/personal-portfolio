@@ -1,47 +1,80 @@
 <script>
-	import external from '$lib/images/external-link.svg';
-	import github from '$lib/images/github.svg';
+	import Projects from './Projects.svelte';
 </script>
 
 <svelte:head>
 	<title>Micaiah Wallace</title>
-	<meta name="description" content="Micaiah Wallace's software projects" />
+	<meta name="description" content="Micaiah Wallace" />
 </svelte:head>
 
-<ul>
-	<li>
-		<div>1. colanderapp.io <span class="muted">resource calendar</span></div>
-		<div class="project-link">
-			<a href="https://dev.colanderapp.io"><img src={external} alt="Colander App" /></a>
-			<a href="https://github.com/colander-app"><img src={github} alt="GitHub" /></a>
-		</div>
-	</li>
-</ul>
+<section class="top-section">
+	<div class="title">
+		<p>Hello! My name is<span class="text-dark comma">,</span></p>
+		<p class="fname">Micaiah</p>
+		<p class="lname">Wallace</p>
+	</div>
+	<div class="summary">
+		<p>software engineer. web application developer. 9+ yrs</p>
+		<p><b>Front-End</b> <span>TypeScript · React · Svelte</span></p>
+		<p><b>Back-End</b> <span>Node · Go · Python</span></p>
+		<p><b>Dev-Ops</b> <span>AWS Lambda · Dynamo DB · Docker</span></p>
+		<p><b>Tech</b> <span>WebSockets · Event Based Architecture · Serverless</span></p>
+	</div>
+</section>
+
+<Projects />
 
 <style>
-	ul {
-		list-style-type: none;
-		font-size: 1.5em;
-	}
-
-	ul > li {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 0 10px;
-	}
-
-	.muted {
-		color: #8e8e8e;
-	}
-
-	.project-link {
+	.top-section {
 		display: flex;
 		flex-direction: row;
-		gap: 0.5em;
+		justify-content: center;
+		align-items: start;
+		flex-wrap: wrap;
+		gap: 2rem;
+		font-family: var(--font-mono);
 	}
 
-	.project-link > a > img {
-		height: 35px;
+	.summary {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-self: stretch;
+		border-left: solid 2px #ccc;
+		padding-left: 1rem;
+	}
+
+	.summary > p:nth-child(n + 2) {
+		display: flex;
+	}
+
+	.summary > p:nth-child(n + 2) b {
+		min-width: 150px;
+	}
+
+	.title {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.comma {
+		font-weight: bold;
+		font-size: 1.3rem;
+	}
+
+	.title p {
+		margin: 0;
+	}
+
+	.fname {
+		color: var(--color-text-dark);
+		font-size: 5rem;
+		text-transform: uppercase;
+	}
+
+	.lname {
+		font-size: 5rem;
+		text-transform: uppercase;
+		margin-top: -25px !important;
 	}
 </style>
