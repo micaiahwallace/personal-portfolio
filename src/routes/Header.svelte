@@ -3,6 +3,7 @@
 	import github from '$lib/images/github.svg';
 	import linkedin from '$lib/images/linkedin.svg';
 	import medium from '$lib/images/medium.svg';
+	import stackoverflow from '$lib/images/stackoverflow.svg';
 </script>
 
 <header>
@@ -17,17 +18,43 @@
 		</ul>
 		<ul>
 			<li>
-				<a class="link" href="https://github.com/micaiahwallace/" target="_blank">
-					<img src={github} alt="GitHub" />
+				<a
+					class="link"
+					href="https://stackoverflow.com/users/1572535/micaiah-wallace"
+					target="_blank"
+					data-tooltip="Stack Overflow"
+				>
+					<img src={stackoverflow} alt="Stack Overflow" />
 				</a>
 			</li>
 			<li>
-				<a class="link" href="https://www.linkedin.com/in/micaiahwallace/" target="_blank">
+				<a
+					class="link"
+					href="https://github.com/micaiahwallace/"
+					target="_blank"
+					data-tooltip="GitHub"
+				>
+					<img src={github} alt="GitHub" />
+				</a>
+			</li>
+
+			<li>
+				<a
+					class="link"
+					href="https://www.linkedin.com/in/micaiahwallace/"
+					target="_blank"
+					data-tooltip="LinkedIn"
+				>
 					<img src={linkedin} alt="LinkedIn" />
 				</a>
 			</li>
 			<li>
-				<a class="link" href="https://micaiah-wallace.medium.com/" target="_blank">
+				<a
+					class="link"
+					href="https://micaiah-wallace.medium.com/"
+					target="_blank"
+					data-tooltip="Medium"
+				>
 					<img src={medium} alt="Medium" />
 				</a>
 			</li>

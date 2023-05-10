@@ -26,7 +26,7 @@
 	];
 </script>
 
-<h2>Featured Projects</h2>
+<h1>Projects</h1>
 
 <ul>
 	{#each projects as project}
@@ -50,11 +50,13 @@
 </ul>
 
 <style>
-	h2 {
+	h1 {
+		font-family: var(--font-mono);
 		color: var(--color-text-dark);
-		text-align: center;
-		margin-top: 4rem;
+		text-align: left;
+		margin-top: 6rem;
 		margin-bottom: 3rem;
+		border-bottom: solid 2px #ccc;
 	}
 
 	.project-title > a {
