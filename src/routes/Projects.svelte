@@ -36,10 +36,10 @@
 					<a href={project.link}>{project.title} <span class="muted">{project.summary}</span></a>
 				</div>
 				<div class="project-link">
-					<a class="link" href={project.link} target="_blank">
+					<a class="link" href={project.link} target="_blank" data-tooltip="View Project">
 						<img src={external} alt={project.linkAlt} />
 					</a>
-					<a class="link" href={project.github} target="_blank">
+					<a class="link" href={project.github} target="_blank" data-tooltip="Project GitHub">
 						<img src={github} alt={project.githubAlt} />
 					</a>
 				</div>
@@ -105,6 +105,6 @@
 	}
 
 	a.link {
-		padding: 0 0.5rem;
+		padding: 0.5rem 0.5rem;
 	}
 </style>

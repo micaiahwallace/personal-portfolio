@@ -27,6 +27,11 @@
 	url="/Micaiah_Wallace_Senior_Software_Engineer.pdf"
 />
 
+<noscript>
+	<h3>Cannot display resume without JavaScript enabled.</h3>
+	<h3>Please use the links above to download or view.</h3>
+</noscript>
+
 <style>
 	section {
 		position: relative;
@@ -34,6 +39,11 @@
 		justify-content: center;
 		gap: 1rem;
 		margin-bottom: 1rem;
+	}
+
+	noscript {
+		margin-top: 20px;
+		text-align: center;
 	}
 
 	section::after {
