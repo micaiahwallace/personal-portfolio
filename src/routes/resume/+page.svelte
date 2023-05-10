@@ -1,5 +1,13 @@
-<script>
-	import PdfViewer from 'svelte-pdf';
+<script lang="ts">
+	import { onMount } from 'svelte';
+
+	let PdfViewer: ConstructorOfATypedSvelteComponent;
+
+	onMount(async () => {
+		const module = await import('svelte-pdf');
+		PdfViewer = module.default;
+	});
+
 	const resume_file = 'Micaiah_Wallace_Senior_Software_Engineer.pdf';
 	const resume_url = '/' + resume_file;
 </script>
@@ -10,7 +18,8 @@
 	<a class="link" href={resume_url}>View</a>
 </section>
 
-<PdfViewer
+<svelte:component
+	this={PdfViewer}
 	data={false}
 	scale={1.42}
 	showButtons={[]}
