@@ -2,11 +2,6 @@
 	import Projects from './Projects.svelte';
 </script>
 
-<svelte:head>
-	<title>Micaiah Wallace</title>
-	<meta name="description" content="Micaiah Wallace" />
-</svelte:head>
-
 <section class="top-section">
 	<div class="title">
 		<p>Hello! My name is<span class="text-dark comma">,</span></p>

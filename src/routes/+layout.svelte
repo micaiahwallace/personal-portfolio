@@ -3,9 +3,13 @@
 	import './styles.css';
 </script>
 
+<svelte:head>
+	<title>Micaiah Wallace</title>
+	<meta name="description" content="Micaiah Wallace" />
+</svelte:head>
+
 <div class="app">
 	<Header />
-
 	<main>
 		<slot />
 	</main>
