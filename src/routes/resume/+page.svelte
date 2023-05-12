@@ -22,8 +22,7 @@
 	this={PdfViewer}
 	data={false}
 	scale={1.42}
-	showButtons={[]}
-	showBorder={false}
+	showButtons={['Previous', 'Next', 'Print']}
 	url="/Micaiah_Wallace_Senior_Software_Engineer.pdf"
 />
 

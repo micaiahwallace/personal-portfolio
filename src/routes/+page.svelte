@@ -64,12 +64,10 @@
 	.fname {
 		color: var(--color-text-dark);
 		font-size: 5rem;
-		text-transform: uppercase;
 	}
 
 	.lname {
 		font-size: 5rem;
-		text-transform: uppercase;
 		margin-top: -25px !important;
 	}
 </style>
