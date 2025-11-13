@@ -8,7 +8,7 @@
 		PdfViewer = module.default;
 	});
 
-	const resume_file = 'Micaiah_Wallace_Senior_Software_Engineer.pdf';
+	const resume_file = 'Micaiah_Wallace_Lead_Software_Engineer.pdf';
 	const resume_url = '/' + resume_file;
 </script>
 
