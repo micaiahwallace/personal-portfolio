@@ -9,7 +9,7 @@
 		<p class="lname">Wallace</p>
 	</div>
 	<div class="summary">
-		<p>full-stack software engineer. web application developer. 11+ yrs</p>
+		<p>full-stack software engineer ~ 11+ yrs</p>
 		<p><b>Front-End</b> <span>TypeScript · React</span></p>
 		<p><b>Back-End</b> <span>Node · Go · Python</span></p>
 		<p><b>Dev-Ops</b> <span>AWS Lambda · Dynamo DB · Docker</span></p>
