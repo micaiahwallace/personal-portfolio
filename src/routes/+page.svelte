@@ -9,11 +9,11 @@
 		<p class="lname">Wallace</p>
 	</div>
 	<div class="summary">
-		<p>software engineer. web application developer. 9+ yrs</p>
-		<p><b>Front-End</b> <span>TypeScript · React · Svelte</span></p>
+		<p>full-stack software engineer. web application developer. 11+ yrs</p>
+		<p><b>Front-End</b> <span>TypeScript · React</span></p>
 		<p><b>Back-End</b> <span>Node · Go · Python</span></p>
 		<p><b>Dev-Ops</b> <span>AWS Lambda · Dynamo DB · Docker</span></p>
-		<p><b>Tech</b> <span>WebSockets · Event Based Architecture · Serverless</span></p>
+		<p><b>Tech</b> <span>WebSockets · Event Based Architecture · Performance Optimization</span></p>
 	</div>
 </section>
 
