@@ -51,6 +51,7 @@ a.link:hover::before {
 }
 
 *[data-tooltip]::after {
+	pointer-events: none;
 	content: attr(data-tooltip);
 	background-color: #161616;
 	position: absolute;

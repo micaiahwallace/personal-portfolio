@@ -92,7 +92,7 @@
 	}
 
 	.muted {
-		color: #8e8e8e;
+		color: var(--color-primary);
 	}
 
 	.project-link {
