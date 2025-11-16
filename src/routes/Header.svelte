@@ -1,5 +1,5 @@
 <script>
-	import { page } from '$app/stores';
+	import { page } from '$app/state';
 	import github from '$lib/images/github.svg';
 	import linkedin from '$lib/images/linkedin.svg';
 	import medium from '$lib/images/medium.svg';
@@ -9,10 +9,10 @@
 <header>
 	<nav>
 		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
+			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
 				<a class="link" href="/">About</a>
 			</li>
-			<li aria-current={$page.url.pathname === '/resume' ? 'page' : undefined}>
+			<li aria-current={page.url.pathname === '/resume' ? 'page' : undefined}>
 				<a class="link" href="/resume">Résumé</a>
 			</li>
 		</ul>

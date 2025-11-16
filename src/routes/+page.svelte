@@ -1,19 +1,32 @@
-<script>
+<script lang="ts">
 	import Projects from './Projects.svelte';
+
+	function resetAnimation(event: MouseEvent) {
+		const element = event.target as HTMLDivElement;
+		element.classList.remove('animate-delay');
+		element.style.animationName = 'initial';
+		void element.offsetWidth;
+		element.style.animationName = ''
+	}
 </script>
 
 <section class="top-section">
 	<div class="title">
 		<p>Hello! My name is<span class="text-dark comma">,</span></p>
-		<p class="fname">Micaiah</p>
-		<p class="lname">Wallace</p>
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<p id="fname" class="title-animation animate-delay" on:click={resetAnimation}>Micaiah</p>
+		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
+		<!-- svelte-ignore a11y_click_events_have_key_events -->
+		<p id="lname" class="title-animation animate-delay" on:click={resetAnimation}>Wallace</p>
 	</div>
 	<div class="summary">
 		<p>full-stack software engineer ~ 11+ yrs</p>
 		<p><b>Front-End</b> <span>TypeScript · React</span></p>
 		<p><b>Back-End</b> <span>Node · Go · Python</span></p>
 		<p><b>Dev-Ops</b> <span>AWS Lambda · Dynamo DB · Docker</span></p>
-		<p><b>Tech</b> <span>WebSockets · Event Based Architecture · Performance Optimization</span></p>
+		<p><b>Interests</b> <span>Event Based Architecture · Performance Optimization</span></p>
+		<p><b></b> <span>Rust · Streaming Applications</span></p>
 	</div>
 </section>
 
@@ -24,7 +37,7 @@
 		display: flex;
 		flex-direction: row;
 		justify-content: center;
-		align-items: start;
+		align-items: center;
 		flex-wrap: wrap;
 		gap: 2rem;
 		font-family: var(--font-mono);
@@ -55,9 +68,12 @@
 	.comma {
 		font-weight: bold;
 		font-size: 1.3rem;
+		color: var(--color-primary);
 	}
 
 	.title p {
+		font-family: var(--font-mono);
+		border: 0;
 		margin-top: 0;
 		margin-bottom: 0;
 	}
@@ -71,21 +87,14 @@
 		}
 	}
 
-		@keyframes shimmer2 {
-		from {
-			background-position-x: -276px;
-		}
-		to {
-			background-position-x: 224px;
-		}
-	}
-
-	.fname {
-		display: inline;
-		background: linear-gradient(290deg, var(--color-text-dark) 40%, rgba(255, 0, 225, 1) 50%, var(--color-text-dark) 60%);
+	.title-animation {
+		background: linear-gradient(290deg, var(--color-text-dark) 25%, var(--color-primary) 50%, var(--color-text-dark) 75%);
 		background-clip: text;
 		background-position-x: -250px;
-		animation: shimmer 0.6s linear 0.5s 1 normal forwards;
+		animation-name: shimmer;
+		animation-duration: 0.3s;
+		animation-timing-function: ease-out;
+		animation-iteration-count: 1;
 		padding-left: 70px;
 		padding-right: 70px;
 		margin-left: -70px;
@@ -94,17 +103,16 @@
 		font-size: 5rem;
 	}
 
-	.lname {
-		font-size: 5rem;
+	#fname.animate-delay {
+		animation-delay: 0.5s;
+	}
+
+	#lname.animate-delay {
+		animation-delay: 0.52s;
+	}
+
+	#lname {
+		--color-text-dark: var(--color-text);
 		margin-top: -25px !important;
-		color: transparent;
-		background: linear-gradient(290deg, var(--color-text) 40%, rgba(255, 0, 225, 1) 50%, var(--color-text) 60%);
-		background-clip: text;
-		background-position-x: -276px;
-		animation: shimmer2 0.6s linear 0.5s 1 normal forwards;
-		padding-left: 70px;
-		padding-right: 70px;
-		margin-left: -70px;
-		margin-right: -70px;
 	}
 </style>
