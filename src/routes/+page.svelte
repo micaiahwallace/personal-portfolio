@@ -58,16 +58,53 @@
 	}
 
 	.title p {
-		margin: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	@keyframes shimmer {
+		from {
+			background-position-x: -250px;
+		}
+		to {
+			background-position-x: 250px;
+		}
+	}
+
+		@keyframes shimmer2 {
+		from {
+			background-position-x: -276px;
+		}
+		to {
+			background-position-x: 224px;
+		}
 	}
 
 	.fname {
-		color: var(--color-text-dark);
+		display: inline;
+		background: linear-gradient(290deg, var(--color-text-dark) 40%, rgba(255, 0, 225, 1) 50%, var(--color-text-dark) 60%);
+		background-clip: text;
+		background-position-x: -250px;
+		animation: shimmer 0.6s linear 0.5s 1 normal forwards;
+		padding-left: 70px;
+		padding-right: 70px;
+		margin-left: -70px;
+		margin-right: -70px;
+		color: transparent;
 		font-size: 5rem;
 	}
 
 	.lname {
 		font-size: 5rem;
 		margin-top: -25px !important;
+		color: transparent;
+		background: linear-gradient(290deg, var(--color-text) 40%, rgba(255, 0, 225, 1) 50%, var(--color-text) 60%);
+		background-clip: text;
+		background-position-x: -276px;
+		animation: shimmer2 0.6s linear 0.5s 1 normal forwards;
+		padding-left: 70px;
+		padding-right: 70px;
+		margin-left: -70px;
+		margin-right: -70px;
 	}
 </style>
