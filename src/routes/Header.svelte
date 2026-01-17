@@ -6,76 +6,74 @@
 	import stackoverflow from '$lib/images/stackoverflow.svg';
 </script>
 
-<header>
-	<nav>
-		<ul>
-			<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
-				<a class="link" href="/">About</a>
-			</li>
-			<li aria-current={page.url.pathname === '/resume' ? 'page' : undefined}>
-				<a class="link" href="/resume">Résumé</a>
-			</li>
-			<li aria-current={page.url.pathname.startsWith('/blog') ? 'page' : undefined}>
-				<a class="link" href="/blog">Blog</a>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<a
-					class="link"
-					href="https://stackoverflow.com/users/1572535/micaiah-wallace"
-					target="_blank"
-					data-tooltip="Stack Overflow"
-				>
-					<img src={stackoverflow} alt="Stack Overflow" />
-				</a>
-			</li>
-			<li>
-				<a
-					class="link"
-					href="https://github.com/micaiahwallace/"
-					target="_blank"
-					data-tooltip="GitHub"
-				>
-					<img src={github} alt="GitHub" />
-				</a>
-			</li>
+<nav>
+	<ul>
+		<li aria-current={page.url.pathname === '/' ? 'page' : undefined}>
+			<a class="link" href="/">About</a>
+		</li>
+		<li aria-current={page.url.pathname === '/resume' ? 'page' : undefined}>
+			<a class="link" href="/resume">Résumé</a>
+		</li>
+		<li aria-current={page.url.pathname.startsWith('/blog') ? 'page' : undefined}>
+			<a class="link" href="/blog">Blog</a>
+		</li>
+	</ul>
+	<ul>
+		<li>
+			<a
+				class="link"
+				href="https://stackoverflow.com/users/1572535/micaiah-wallace"
+				target="_blank"
+				data-tooltip="Stack Overflow"
+			>
+				<img src={stackoverflow} alt="Stack Overflow" />
+			</a>
+		</li>
+		<li>
+			<a
+				class="link"
+				href="https://github.com/micaiahwallace/"
+				target="_blank"
+				data-tooltip="GitHub"
+			>
+				<img src={github} alt="GitHub" />
+			</a>
+		</li>
 
-			<li>
-				<a
-					class="link"
-					href="https://www.linkedin.com/in/micaiahwallace/"
-					target="_blank"
-					data-tooltip="LinkedIn"
-				>
-					<img src={linkedin} alt="LinkedIn" />
-				</a>
-			</li>
-			<li>
-				<a
-					class="link"
-					href="https://micaiah-wallace.medium.com/"
-					target="_blank"
-					data-tooltip="Medium"
-				>
-					<img src={medium} alt="Medium" />
-				</a>
-			</li>
-		</ul>
-	</nav>
-</header>
+		<li>
+			<a
+				class="link"
+				href="https://www.linkedin.com/in/micaiahwallace/"
+				target="_blank"
+				data-tooltip="LinkedIn"
+			>
+				<img src={linkedin} alt="LinkedIn" />
+			</a>
+		</li>
+		<li>
+			<a
+				class="link"
+				href="https://micaiah-wallace.medium.com/"
+				target="_blank"
+				data-tooltip="Medium"
+			>
+				<img src={medium} alt="Medium" />
+			</a>
+		</li>
+	</ul>
+</nav>
 
 <style>
-	header {
-		display: flex;
-		justify-content: space-between;
-	}
-
 	nav {
+		position: sticky;
+		top: 0;
 		width: 100%;
+		overflow-x: scroll;
+		overflow-y: hidden;
 		display: flex;
 		justify-content: space-between;
 		--background: rgba(255, 255, 255, 0.7);
+		background-color: #fff;
 	}
 
 	img {

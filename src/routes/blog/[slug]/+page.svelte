@@ -44,6 +44,7 @@
 	.body {
 		align-self: center;
 		width: 100%;
+		font-size: 20px;
 	}
 
 	@media (min-width: 768px) {

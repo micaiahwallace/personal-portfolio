@@ -6,7 +6,7 @@
 		element.classList.remove('animate-delay');
 		element.style.animationName = 'initial';
 		void element.offsetWidth;
-		element.style.animationName = ''
+		element.style.animationName = '';
 	}
 </script>
 
@@ -26,7 +26,7 @@
 		<p><b>Back-End</b> <span>Node · Go · Python</span></p>
 		<p><b>Dev-Ops</b> <span>AWS Lambda · Dynamo DB · Docker</span></p>
 		<p><b>Interests</b> <span>Event Based Architecture · Performance Optimization</span></p>
-		<p><b></b> <span>Rust · Streaming Applications</span></p>
+		<p><b>&nbsp;</b> <span>Rust · Streaming Applications</span></p>
 	</div>
 </section>
 
@@ -39,6 +39,7 @@
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
+		overflow-x: auto;
 		gap: 2rem;
 		font-family: var(--font-mono);
 	}
@@ -52,6 +53,13 @@
 		padding-left: 1rem;
 	}
 
+	@media (max-width: 500px) {
+		.summary p {
+			margin-top: 0.4em;
+			margin-bottom: 0.4em;
+		}
+	}
+
 	.summary > p:nth-child(n + 2) {
 		display: flex;
 	}
@@ -63,6 +71,7 @@
 	.title {
 		display: flex;
 		flex-direction: column;
+		overflow-x: hidden;
 	}
 
 	.comma {
@@ -88,7 +97,12 @@
 	}
 
 	.title-animation {
-		background: linear-gradient(290deg, var(--color-text-dark) 25%, var(--color-primary) 50%, var(--color-text-dark) 75%);
+		background: linear-gradient(
+			290deg,
+			var(--color-text-dark) 25%,
+			var(--color-primary) 50%,
+			var(--color-text-dark) 75%
+		);
 		background-clip: text;
 		background-position-x: -250px;
 		animation-name: shimmer;

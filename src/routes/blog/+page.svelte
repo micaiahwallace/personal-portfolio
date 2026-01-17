@@ -46,7 +46,7 @@
 	<ul>
 		{#each filteredPosts as post}
 			<li>
-				<a class="large" href={`/blog/${post.slug}`}>
+				<a class="link" href={`/blog/${post.slug}`}>
 					{post.metadata.title}
 					{#if post.metadata.draft}
 						<span class="draft">(Draft)</span>
@@ -78,10 +78,11 @@
 		gap: 0.8rem;
 	}
 
-	.large {
+	.link {
 		display: block;
 		font-size: 24px;
-		color: #0303aa;
+		text-transform: none;
+		align-self: flex-start;
 	}
 
 	.controls {
