@@ -26,7 +26,7 @@
 		});
 </script>
 
-<h1>Blog</h1>
+<h1>Search Posts</h1>
 
 <!-- Controls -->
 <div class="controls">
@@ -80,13 +80,19 @@
 
 	.large {
 		display: block;
-		font-size: 20px;
+		font-size: 24px;
+		color: #0303aa;
 	}
 
 	.controls {
 		display: flex;
 		gap: 1rem;
 		margin-bottom: 1rem;
+	}
+
+	input[type='search'] {
+		width: 100%;
+		max-width: 500px;
 	}
 
 	input[type='search'],
