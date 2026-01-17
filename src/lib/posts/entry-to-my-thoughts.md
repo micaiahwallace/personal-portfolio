@@ -5,6 +5,8 @@ description: 'Entrypoint to my public personal blog.'
 published: true
 ---
 
+<img src="$lib/images/rainbg.jpg" alt="rain" width="100%" />
+
 ## It Begins
 
 <p>
