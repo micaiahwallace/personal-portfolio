@@ -10,7 +10,8 @@
 
 <svelte:head>
 	<title>Micaiah Wallace</title>
-	<meta name="description" content="Micaiah Wallace" />
+	<meta name="description" content="Micaiah Wallace - Portfolio" />
+	<meta name="viewport" content= "width=device-width, user-scalable=no">
 </svelte:head>
 
 <div class="app">

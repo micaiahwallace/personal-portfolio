@@ -43,10 +43,16 @@
 
 	.body {
 		align-self: center;
-		max-width: 900px;
-		border-left: solid 2px #ccc;
-		border-right: solid 2px #ccc;
-		padding-left: 40px;
-		padding-right: 40px;
+		width: 100%;
+	}
+
+	@media (min-width: 768px) {
+		.body {
+			max-width: 60vw;
+			border-left: solid 2px #ccc;
+			border-right: solid 2px #ccc;
+			padding-left: 40px;
+			padding-right: 40px;
+		}
 	}
 </style>
