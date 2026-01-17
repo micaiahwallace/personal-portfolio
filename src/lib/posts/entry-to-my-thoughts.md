@@ -24,5 +24,18 @@ In a lot of ways, I already feel free just being able to flow, not caring about 
 </p>
 
 <p>
-I'll keep this one short, it'll probably get archived anyways once I get some real posts up.
+I'll keep this one short, it'll probably get archived anyways once I get some real posts up.</p>
+
+<p>
+Now let's test the code highlighter feature
 </p>
+
+```ts
+function getMyBlog(): BlogMetadata {
+	return {
+		name: `Micaiah Wallace's Blog`,
+		purpose: `To document my thoughts that I want to be public`
+	};
+}
+publishBlog(getMyBlog());
+```
