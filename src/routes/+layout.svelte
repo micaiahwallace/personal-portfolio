@@ -3,6 +3,7 @@
 	import { dev } from '$app/environment';
 	import { inject } from '@vercel/analytics';
 	import './styles.css';
+	import 'highlight.js/styles/atom-one-dark-reasonable.css';
 
 	inject({ mode: dev ? 'development' : 'production' });
 </script>
