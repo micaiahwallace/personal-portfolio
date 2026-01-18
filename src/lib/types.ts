@@ -1,11 +1,12 @@
 import type { SvelteComponent } from 'svelte';
 
 export interface BlogMetadata {
-	title: string;
 	date: string;
 	description?: string;
-	published?: boolean;
 	draft?: boolean;
+	published?: boolean;
+	tags?: string[];
+	title: string;
 }
 
 export interface BlogPost {

@@ -2,6 +2,7 @@
 title: 'Entry to my thoughts ~'
 date: '2026-01-16'
 description: 'Entrypoint to my public personal blog.'
+tags: ['unlisted']
 published: true
 ---
 

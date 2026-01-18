@@ -16,7 +16,22 @@
 		Posted: {data.metadata.date}
 	</small>
 
-	<hr />
+	<span class="dot-container">
+		<div class="dot">&nbsp;</div>
+		<div class="dot">&nbsp;</div>
+	</span>
+
+	{#if data.metadata.tags?.length}
+		<p class="tags">
+			tags:
+			{#each data.metadata.tags as tag, i}
+				<a class="tag-link active" href={`/blog?tag=${tag}`}>{tag}</a>{i <
+				data.metadata.tags.length - 1
+					? ', '
+					: ''}
+			{/each}
+		</p>
+	{/if}
 
 	<div class="body">
 		<svelte:component this={data.component} />
@@ -35,6 +50,42 @@
 		font-weight: bold;
 		margin-bottom: 0.5rem;
 		display: block;
+	}
+
+	/* .link {
+		text-transform: none;
+	} */
+
+	.dot-container {
+		margin-top: 1rem;
+		margin-bottom: 1rem;
+		display: flex;
+		gap: 0.6rem;
+	}
+
+	.dot {
+		display: inline-block;
+		width: 6px;
+		height: 6px;
+		border-radius: 3px;
+		background-color: #eee;
+	}
+
+	.tags {
+		font-size: small;
+		margin-top: 0;
+	}
+
+	.tag-link {
+		display: inline-block;
+		text-decoration: none;
+		color: #ccc;
+		margin-right: 7px;
+	}
+
+	.tag-link.active {
+		color: inherit;
+		text-decoration: underline;
 	}
 
 	hr {
