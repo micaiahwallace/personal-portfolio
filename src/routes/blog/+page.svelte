@@ -2,6 +2,7 @@
 	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import type { BlogPost } from '$lib/types';
+	import { browser } from '$app/environment';
 
 	export let data: {
 		posts: BlogPost[];
@@ -14,11 +15,16 @@
 	const defaultExcludeTags = ['unlisted'];
 	const baseTagFilter = data.allTags.filter((t) => !defaultExcludeTags.includes(t));
 
-	$: selectedTags = ($page.url.searchParams.get('tag') ?? baseTagFilter.join(','))
-		.split(',')
-		.map((t) => t.trim())
-		.filter((t) => !t.startsWith('-'))
-		.filter(Boolean);
+	let selectedTags: string[] = [];
+	$: {
+		if (browser) {
+			selectedTags = ($page.url.searchParams.get('tag') ?? baseTagFilter.join(','))
+				.split(',')
+				.map((t) => t.trim())
+				.filter((t) => !t.startsWith('-'))
+				.filter(Boolean);
+		}
+	}
 
 	$: filteredPosts = data.posts
 		.filter((post) => {
