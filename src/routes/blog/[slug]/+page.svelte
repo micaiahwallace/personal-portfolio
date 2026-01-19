@@ -1,37 +1,36 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import Tags from '$lib/tags.svelte';
 	import type { BlogPost } from '$lib/types';
 
 	export let data: BlogPost;
 </script>
 
 <article>
-	<span class="large">
+	<span class="title">
 		{data.metadata.title}
 		{#if data.metadata.draft}
 			<span class="draft">(Draft)</span>
 		{/if}
 	</span>
 
-	<small>
-		Posted: {data.metadata.date}
-	</small>
+	{#if data.metadata.tags?.length}
+		<div class="meta">
+			<small>{data.metadata.date}</small>
+			<Tags
+				tags={data.metadata.tags}
+				selectedTags={data.metadata.tags}
+				onToggleTag={(tag) => goto(`/blog?tag=${tag}`)}
+				label="|"
+				minimal={true}
+			/>
+		</div>
+	{/if}
 
 	<span class="dot-container">
 		<div class="dot">&nbsp;</div>
 		<div class="dot">&nbsp;</div>
 	</span>
-
-	{#if data.metadata.tags?.length}
-		<p class="tags">
-			tags:
-			{#each data.metadata.tags as tag, i}
-				<a class="tag-link active" href={`/blog?tag=${tag}`}>{tag}</a>{i <
-				data.metadata.tags.length - 1
-					? ', '
-					: ''}
-			{/each}
-		</p>
-	{/if}
 
 	<div class="body">
 		<svelte:component this={data.component} />
@@ -45,16 +44,18 @@
 		align-items: center;
 	}
 
-	.large {
+	.title {
 		font-size: 24px;
 		font-weight: bold;
 		margin-bottom: 0.5rem;
 		display: block;
 	}
 
-	/* .link {
-		text-transform: none;
-	} */
+	.meta {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
 
 	.dot-container {
 		margin-top: 1rem;
@@ -69,27 +70,6 @@
 		height: 6px;
 		border-radius: 3px;
 		background-color: #eee;
-	}
-
-	.tags {
-		font-size: small;
-		margin-top: 0;
-	}
-
-	.tag-link {
-		display: inline-block;
-		text-decoration: none;
-		color: #ccc;
-		margin-right: 7px;
-	}
-
-	.tag-link.active {
-		color: inherit;
-		text-decoration: underline;
-	}
-
-	hr {
-		color: #f6f6f6;
 	}
 
 	.body {

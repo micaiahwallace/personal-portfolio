@@ -3,6 +3,7 @@
 	import { goto } from '$app/navigation';
 	import type { BlogPost } from '$lib/types';
 	import { browser } from '$app/environment';
+	import Tags from '$lib/tags.svelte';
 
 	export let data: {
 		posts: BlogPost[];
@@ -61,8 +62,6 @@
 	}
 </script>
 
-<h1>Search Posts</h1>
-
 <!-- Controls -->
 <div class="controls">
 	<input type="search" placeholder="Search by title…" bind:value={query} />
@@ -74,21 +73,13 @@
 	</select>
 </div>
 
-<div class="tags">
-	filter by tags:
-	{#each data.allTags as tag}
-		<a
-			class="tag-link {selectedTags.includes(tag) ? 'active' : ''}"
-			href="#"
-			on:click={(e) => {
-				e.preventDefault();
-				toggleTag(tag);
-			}}
-		>
-			{tag}
-		</a>
-	{/each}
-</div>
+<Tags
+	tags={data.allTags}
+	{selectedTags}
+	onToggleTag={toggleTag}
+	label="filter by tags:"
+	minimal={false}
+/>
 
 <!-- Results -->
 {#if filteredPosts.length === 0}
@@ -97,6 +88,16 @@
 	<ul>
 		{#each filteredPosts as post}
 			<li>
+				<div class="meta">
+					<small>{post.metadata.date}</small>
+					<Tags
+						tags={post.metadata.tags}
+						selectedTags={post.metadata.tags}
+						onToggleTag={(tag) => goto(`?tag=${tag}`)}
+						label="|"
+					/>
+				</div>
+
 				<a class="link" href={`/blog/${post.slug}`}>
 					{post.metadata.title}
 					{#if post.metadata.draft}
@@ -104,22 +105,8 @@
 					{/if}
 				</a>
 
-				<small>Posted: {post.metadata.date}</small>
-
 				{#if post.metadata.description}
 					<span>{post.metadata.description}</span>
-				{/if}
-
-				{#if post.metadata.tags?.length}
-					<p class="tags">
-						tags:
-						{#each post.metadata.tags as tag, i}
-							<a class="tag-link active" href={`/blog?tag=${tag}`}>{tag}</a>{i <
-							post.metadata.tags.length - 1
-								? ', '
-								: ''}
-						{/each}
-					</p>
 				{/if}
 			</li>
 		{/each}
@@ -138,24 +125,7 @@
 	li {
 		display: flex;
 		flex-direction: column;
-		gap: 0.8rem;
-	}
-
-	.tags {
-		font-size: small;
-		margin-top: 0;
-	}
-
-	.tag-link {
-		display: inline-block;
-		text-decoration: none;
-		color: #ccc;
-		margin-right: 7px;
-	}
-
-	.tag-link.active {
-		color: inherit;
-		text-decoration: underline;
+		gap: 0.45rem;
 	}
 
 	.link {
@@ -163,6 +133,13 @@
 		font-size: 24px;
 		text-transform: none;
 		align-self: flex-start;
+		letter-spacing: normal;
+	}
+
+	.meta {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
 	}
 
 	.controls {
